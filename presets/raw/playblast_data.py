@@ -17,7 +17,7 @@ scenes.render.ffmpeg.audio_codec = "MP3"
 # scenes.render.filepath = "path output shot"
 
 #Metadata
-scenes.render.metadata_input = "SCENE"
+# scenes.render.metadata_input = "SCENE"
 scenes.render.use_stamp_date = True
 scenes.render.use_stamp_time = True
 scenes.render.use_stamp_render_time = False
@@ -31,6 +31,8 @@ scenes.render.use_stamp_scene = False
 scenes.render.use_stamp_marker = False
 scenes.render.use_stamp_filename = True
 scenes.render.use_stamp_sequencer_strip = False
+scenes.render.use_compositing = False
+scenes.render.use_sequencer = False
 
 #Note
 scenes.render.use_stamp_note = True

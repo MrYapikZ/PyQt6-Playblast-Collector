@@ -51,8 +51,13 @@ class NAV_OT_render(bpy.types.Operator):
         # Ensure the preset is applied before rendering
         bpy.ops.nav_ops.apply_preset()
 
-        # Start rendering the animation
-        bpy.ops.render.render(animation=True)
+        camera = bpy.context.scene.camera
+        if camera:
+            camera.select_set(True)
+            bpy.context.view_layer.objects.active = camera
+            bpy.ops.render.opengl(animation=True)
+        else:
+            print("Tidak ada kamera aktif di scene.")
 
         self.report({'INFO'}, "Rendering started")
         return {'FINISHED'}
