@@ -7,7 +7,7 @@ class DataSettings(bpy.types.PropertyGroup):
         name="Project",
         description="Select Project",
         items=[
-            ("K", "Jagat", "RMB"),
+            ("K", "Jagat", "JGT"),
             ("O", "Rimba", "RMB")
         ]
     )

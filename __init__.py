@@ -2,7 +2,7 @@ bl_info = {
     "name": "PTP Playblast",
     "description": "Fast viewport playblasts with versioned filenames.",
     "author": "MrYapikZ",
-    "version": (1, 0, 2),
+    "version": (1, 0, 3),
     "blender": (2, 93, 0),
     "location": "View3D > Sidebar > PTP_Playblast",
     "category": "Render",

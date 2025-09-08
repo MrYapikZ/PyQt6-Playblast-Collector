@@ -20,9 +20,10 @@ class NAV_OT_apply_preset(bpy.types.Operator):
 
         preset = bpy.ops.presets.apply_preset('EXEC_DEFAULT')
 
-        scenes.render.stamp_note_text = device.get_machine_name()
+        # scenes.render.stamp_note_text = device.get_machine_name()
 
         _, _, name, _ = filedata.split_blend_filepath()
+        scenes.render.stamp_note_text = name
         parts = [part for part in name.split("_") if part.strip()]
         # [0] project, [1] episode, [2] seq, [3] shot, [4] division, [5] version(optional)
         dir_path = f"/mnt/{pref_props.project}/{parts[1]}/{parts[1]}_{parts[2]}/{parts[1]}_{parts[2]}_{parts[3]}/playblast/{parts[4]}"
