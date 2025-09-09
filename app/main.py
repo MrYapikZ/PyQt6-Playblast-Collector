@@ -9,7 +9,7 @@ class MainUI(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.setWindowTitle("Playblast Collector")
-        self.ui.label_version.setText("v0.1.0")
+        self.ui.label_version.setText("v0.1.1")
 
         self.ui.tabWidget_main.addTab(CollectorHandler(), "Collector")
         # Additional UI setup can be done here
@@ -20,4 +20,4 @@ if __name__ == '__main__':
     window.show()
     sys.exit(app.exec())
 
-# pyinstaller --clean --noconsole --onefile -n ShotFolderGenerator main.py
+# pyinstaller --clean --noconsole --onefile -n PlayblastCollector -p . --collect-submodules app app/main.py
