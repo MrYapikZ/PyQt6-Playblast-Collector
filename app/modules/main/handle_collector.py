@@ -2,6 +2,7 @@ import os
 from PyQt6.QtWidgets import QWidget, QMessageBox
 from app.ui.collector_widget_ui import Ui_Form
 from app.services.file_manager import FileManager
+from pathlib import Path
 
 class CollectorHandler(QWidget):
     def __init__(self):
@@ -36,12 +37,24 @@ class CollectorHandler(QWidget):
                 ep, seq, shot, div = key
 
                 print(f"{div.upper()} latest: {file}")
-                copy_file = FileManager(self.ui.lineEdit_projectPath.text(),
-                                              self.ui.lineEdit_fileExtension.text()).copy_file(src=file, destination=self.ui.lineEdit_exportPath.text(), division=div)
-                if copy_file == "NOT_EXIST":
-                    QMessageBox.warning(self, "Warning", f"Export path does not exist: {self.ui.lineEdit_exportPath.text()}")
-                    raise FileNotFoundError(f"Export path does not exist: {self.ui.lineEdit_exportPath.text()}")
-                self.ui.listWidget_fileList.addItem(os.path.basename(file))
+                export_path = Path(self.ui.lineEdit_exportPath.text())
+                if not export_path.exists():
+                    QMessageBox.warning(self, "Warning", f"Export path does not exist: {export_path}")
+                    raise FileNotFoundError(f"Export path does not exist: {export_path}")
+                if (self.ui.checkBox_divAnm.isChecked() and div == "anm") or (self.ui.checkBox_divLay.isChecked()  and div == "lay"):
+                    copy_file = FileManager(
+                        self.ui.lineEdit_projectPath.text(),
+                        self.ui.lineEdit_fileExtension.text()
+                    ).copy_file(
+                        src=file,
+                        destination=self.ui.lineEdit_exportPath.text(),
+                        division=div
+                    )
+                    self.ui.listWidget_fileList.addItem(os.path.basename(file))
+                # if copy_file == "NOT_EXIST":
+                #     QMessageBox.warning(self, "Warning", f"Export path does not exist: {self.ui.lineEdit_exportPath.text()}")
+                #     raise FileNotFoundError(f"Export path does not exist: {self.ui.lineEdit_exportPath.text()}")
+
 
         except Exception as e:
             print(f"Error setting paths: {e}")
