@@ -14,22 +14,33 @@
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_7">
+   <item row="0" column="1">
+    <layout class="QGridLayout" name="gridLayout_fileList">
+     <item row="0" column="0">
+      <widget class="QListWidget" name="listWidget_fileList"/>
+     </item>
+    </layout>
+   </item>
    <item row="0" column="0">
-    <layout class="QVBoxLayout" name="verticalLayout">
+    <layout class="QVBoxLayout" name="verticalLayout_dataPanel">
      <item>
-      <layout class="QGridLayout" name="gridLayout_2">
+      <layout class="QGridLayout" name="gridLayout_projectPath">
        <item row="1" column="0">
-        <widget class="QLineEdit" name="lineEdit"/>
+        <widget class="QLineEdit" name="lineEdit_projectPath">
+         <property name="placeholderText">
+          <string>example(/mnt/K/)</string>
+         </property>
+        </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QToolButton" name="toolButton">
+        <widget class="QToolButton" name="toolButton_projectPath">
          <property name="text">
           <string>Browse</string>
          </property>
         </widget>
        </item>
        <item row="0" column="0" colspan="2">
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="label_projectPath">
          <property name="text">
           <string>Project Path</string>
          </property>
@@ -38,35 +49,39 @@
       </layout>
      </item>
      <item>
-      <layout class="QGridLayout" name="gridLayout_4">
-       <item row="1" column="1">
-        <widget class="QToolButton" name="toolButton_2">
+      <layout class="QGridLayout" name="gridLayout_exportPath">
+       <item row="0" column="0" colspan="2">
+        <widget class="QLabel" name="label_exportPath">
          <property name="text">
-          <string>Browse</string>
+          <string>Export Path</string>
          </property>
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QLineEdit" name="lineEdit_2"/>
+        <widget class="QLineEdit" name="lineEdit_exportPath"/>
        </item>
-       <item row="0" column="0" colspan="2">
-        <widget class="QLabel" name="label_3">
+       <item row="1" column="1">
+        <widget class="QToolButton" name="toolButton_exportPath">
          <property name="text">
-          <string>Export Path</string>
+          <string>Browse</string>
          </property>
         </widget>
        </item>
       </layout>
      </item>
      <item>
-      <layout class="QGridLayout" name="gridLayout_3">
-       <item row="1" column="0">
-        <widget class="QComboBox" name="comboBox"/>
-       </item>
+      <layout class="QGridLayout" name="gridLayout_fileExtension">
        <item row="0" column="0">
-        <widget class="QLabel" name="label_2">
+        <widget class="QLabel" name="label_fileExtension">
          <property name="text">
-          <string>Division</string>
+          <string>File Extension</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLineEdit" name="lineEdit_fileExtension">
+         <property name="placeholderText">
+          <string>(default get all file)</string>
          </property>
         </widget>
        </item>
@@ -86,22 +101,15 @@
       </spacer>
      </item>
      <item>
-      <layout class="QGridLayout" name="gridLayout_5">
+      <layout class="QGridLayout" name="gridLayout_excute">
        <item row="0" column="0">
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="pushButton_execute">
          <property name="text">
           <string>Execute</string>
          </property>
         </widget>
        </item>
       </layout>
-     </item>
-    </layout>
-   </item>
-   <item row="0" column="1">
-    <layout class="QGridLayout" name="gridLayout_6">
-     <item row="0" column="0">
-      <widget class="QListView" name="listView"/>
      </item>
     </layout>
    </item>
