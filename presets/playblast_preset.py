@@ -20,7 +20,8 @@ class PRESET_OT_apply_playblast(bpy.types.Operator):
         scenes.render.fps = 24
         scenes.render.image_settings.file_format = "FFMPEG"
         scenes.render.ffmpeg.format = "QUICKTIME"
-        scenes.render.ffmpeg.audio_codec = "MP3"
+        scenes.render.ffmpeg.audio_codec = "AAC"
+        scenes.render.ffmpeg.codec = "PRORES"
         # scenes.render.filepath = "path output shot"
 
         # Metadata
